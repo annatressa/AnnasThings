@@ -1,23 +1,52 @@
-function updateTimer() {
-  future  = Date.parse("November 28, 2023 00:00:00");
-  now     = new Date();
-  diff    = future - now;
-
-  days  = Math.floor( diff / (1000*60*60*24) );
-  hours = Math.floor( diff / (1000*60*60) );
-  mins  = Math.floor( diff / (1000*60) );
-  secs  = Math.floor( diff / 1000 );
-
-  d = days;
-  h = hours - days  * 24;
-  m = mins  - hours * 60;
-  s = secs  - mins  * 60;
-
-  document.getElementById("timer")
-    .innerHTML =
-      '<div>' + d + '<span>days</span></div>' +
-      '<div>' + h + '<span>hours</span></div>' +
-      '<div>' + m + '<span>minutes</span></div>' +
-      '<div>' + s + '<span>seconds</span></div>' ;
+<div class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="dyajmeK" data-user="Anna-Broadhead"  data-prefill='{"title":"Date Time Countdown Timer","tags":[],"scripts":[],"stylesheets":[]}'>
+  <pre data-lang="html">&lt;div id="timer">&lt;/div></pre>
+  <pre data-lang="css">body {
+    text-align: center;
+    padding: 70px 50px;
+    background: #0D1A29;
+    font-family: sans-serif;
+    font-weight: lighter;
 }
-setInterval('updateTimer()', 1000 );
+
+#timer {
+    font-size: 3em;
+    font-weight: 100;
+    color: white;
+    text-shadow: 0 0 20px #48C8FF;
+}
+
+#timer div {
+    display: inline-block;
+    min-width: 90px;
+}
+
+#timer div span {
+    color: #B1CDF1;
+    display: block;
+    font-size: .35em;
+    font-weight: 400;
+}</pre>
+  <pre data-lang="js">function updateTimer() {
+    future = Date.parse("november 28, 2023 00:00:00");
+    now = new Date();
+    diff = future - now;
+
+    days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    hours = Math.floor(diff / (1000 * 60 * 60));
+    mins = Math.floor(diff / (1000 * 60));
+    secs = Math.floor(diff / 1000);
+
+    d = days;
+    h = hours - days * 24;
+    m = mins - hours * 60;
+    s = secs - mins * 60;
+
+    document.getElementById("timer")
+        .innerHTML =
+        '&lt;div>' + d + '&lt;span>days&lt;/span>&lt;/div>' +
+        '&lt;div>' + h + '&lt;span>hours&lt;/span>&lt;/div>' +
+        '&lt;div>' + m + '&lt;span>minutes&lt;/span>&lt;/div>' +
+        '&lt;div>' + s + '&lt;span>seconds&lt;/span>&lt;/div>';
+}
+setInterval('updateTimer()', 1000);</pre></div>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
